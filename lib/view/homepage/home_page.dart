@@ -57,10 +57,16 @@ class _HomePageState extends State<HomePage> {
             children: [
               const ResumeBio(),
               SizedBox(
-                height: MediaQuery.of(context).size.width > 480 ? 140.0 : 100.0,
+                height: MediaQuery.of(context).size.width > 480
+                    ? 140.0
+                    : MediaQuery.of(context).size.width < 411
+                        ? 80.0
+                        : 100.0,
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 22.0),
+                padding: EdgeInsets.symmetric(
+                    horizontal:
+                        MediaQuery.of(context).size.width < 411 ? 17.0 : 22.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

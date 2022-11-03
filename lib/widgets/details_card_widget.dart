@@ -17,7 +17,11 @@ class DetailCard extends StatelessWidget {
         Card(
           elevation: 20.0,
           child: Container(
-            width: MediaQuery.of(context).size.width > 480 ? 200 : 170,
+            width: MediaQuery.of(context).size.width > 480
+                ? 200
+                : MediaQuery.of(context).size.width < 411
+                    ? 140.0
+                    : 170,
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
             decoration: const BoxDecoration(
               gradient: LinearGradient(

@@ -16,6 +16,8 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     splash.startAnimation();
+    print(MediaQuery.of(context).size.width);
+    print(MediaQuery.of(context).size.height);
     return Scaffold(
       backgroundColor: Colors.yellow[100],
       body: Stack(
@@ -57,7 +59,11 @@ class _SplashScreenState extends State<SplashScreen> {
             () => AnimatedPositioned(
               duration: const Duration(milliseconds: 1600),
               top: MediaQuery.of(context).size.width > 480 ? 140.0 : 220.0,
-              left: MediaQuery.of(context).size.width > 480 ? 110.0 : 60.0,
+              left: MediaQuery.of(context).size.width > 480
+                  ? 110.0
+                  : MediaQuery.of(context).size.width < 411
+                      ? 30.0
+                      : 60.0,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
