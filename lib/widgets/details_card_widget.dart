@@ -15,6 +15,11 @@ class DetailCard extends StatelessWidget {
       children: [
         BioHead(text: headerText),
         Card(
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(16.0),
+            ),
+          ),
           elevation: 20.0,
           child: Container(
             width: MediaQuery.of(context).size.width > 480
@@ -29,6 +34,9 @@ class DetailCard extends StatelessWidget {
                   Colors.blue,
                   Colors.blueAccent,
                 ],
+              ),
+              borderRadius: BorderRadius.all(
+                Radius.circular(13.0),
               ),
             ),
             child: Text(
