@@ -7,10 +7,10 @@ import 'package:my_resume/constants/text_strings.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-import '../widgets/details_card_widget.dart';
-import '../widgets/resume_bio.dart';
-import '../widgets/social_link.dart';
-import '../widgets/text_widget.dart';
+import '../../widgets/details_card_widget.dart';
+import '../../widgets/resume_bio.dart';
+import '../../widgets/social_link.dart';
+import '../../widgets/text_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                     Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: const [
                         BioHead(text: 'Skills'),
                         SkillTile(
