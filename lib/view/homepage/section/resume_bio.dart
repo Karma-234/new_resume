@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_resume/widgets/text_widget.dart';
 
-import '../constants/image_strings.dart';
-import '../constants/text_strings.dart';
+import '../../../constants/image_strings.dart';
+import '../../../constants/text_strings.dart';
 
 class ResumeBio extends StatelessWidget {
   const ResumeBio({

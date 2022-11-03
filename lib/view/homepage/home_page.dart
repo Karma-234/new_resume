@@ -8,9 +8,11 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 import '../../widgets/details_card_widget.dart';
-import '../../widgets/resume_bio.dart';
+import 'section/resume_bio.dart';
+import '../../widgets/skill_tile.dart';
 import '../../widgets/social_link.dart';
 import '../../widgets/text_widget.dart';
+import 'section/skills.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -69,63 +71,13 @@ class _HomePageState extends State<HomePage> {
                         DetailCard(headerText: 'About', bodyText: about),
                       ],
                     ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: const [
-                        BioHead(text: 'Skills'),
-                        SkillTile(
-                          icon: FontAwesomeIcons.python,
-                          skill: python,
-                        ),
-                        SkillTile(
-                          icon: FontAwesomeIcons.mobile,
-                          skill: flutter,
-                        ),
-                        SkillTile(
-                            icon: FontAwesomeIcons.solidFileExcel,
-                            skill: sqlite),
-                        SkillTile(
-                          icon: FontAwesomeIcons.java,
-                          skill: java,
-                        ),
-                        SkillTile(
-                          icon: FontAwesomeIcons.route,
-                          skill: api,
-                        )
-                      ],
-                    ),
+                    const Skills(),
                   ],
                 ),
               ),
             ],
           ),
         ],
-      ),
-    );
-  }
-}
-
-class SkillTile extends StatelessWidget {
-  const SkillTile({
-    Key? key,
-    required this.icon,
-    this.iconColor,
-    required this.skill,
-  }) : super(key: key);
-  final String skill;
-  final IconData icon;
-  final Color? iconColor;
-
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      leading: Icon(
-        icon,
-        color: iconColor ?? Colors.grey[450],
-      ),
-      title: Text(
-        skill,
-        style: GoogleFonts.inika(fontSize: 18.0),
       ),
     );
   }

@@ -56,8 +56,8 @@ class _SplashScreenState extends State<SplashScreen> {
           Obx(
             () => AnimatedPositioned(
               duration: const Duration(milliseconds: 1600),
-              top: 220.0,
-              left: 60.0,
+              top: MediaQuery.of(context).size.width > 480 ? 140.0 : 220.0,
+              left: MediaQuery.of(context).size.width > 480 ? 110.0 : 60.0,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
