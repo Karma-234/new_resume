@@ -21,7 +21,7 @@ A new Flutter project.
 -More and smoother animations.
 -Navigation to git repository showcasing each skill.
 -Dark mode implementaion.
--Language implementation.
+-Multiple Languages implementation.
 
 # challenges
 -Design was off-heart, getting a design was surprisingly challenging.
