@@ -4,7 +4,11 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_resume/constants/image_strings.dart';
 import 'package:my_resume/constants/text_strings.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
+import '../widgets/details_card_widget.dart';
+import '../widgets/resume_bio.dart';
 import '../widgets/text_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -19,49 +23,27 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: true,
-        leading: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            IconButton(
-              onPressed: () async {},
-              icon: const Icon(
-                FontAwesomeIcons.twitter,
-                color: Colors.blue,
-              ),
-            ),
-            const Icon(
-              FontAwesomeIcons.githubAlt,
-              color: Colors.black,
-            ),
-            const Icon(
-              FontAwesomeIcons.linkedinIn,
-              color: Colors.blue,
-            ),
-          ],
-        ),
-        leadingWidth: 100.0,
-        centerTitle: true,
         backgroundColor: Colors.white.withOpacity(1),
         title: Text(
           'Home',
           style: GoogleFonts.montserrat(
-              color: Colors.blueGrey, fontWeight: FontWeight.bold),
+              color: Colors.blueGrey,
+              fontWeight: FontWeight.bold,
+              fontSize: 30.0),
         ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.settings,
-              color: Colors.blueGrey,
-            ),
+        actions: const [
+          LinkIcon(
+            icon: FontAwesomeIcons.twitter,
+            proLink: twitter,
           ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.logout,
-              color: Colors.blueGrey,
-            ),
+          LinkIcon(
+            icon: FontAwesomeIcons.github,
+            proLink: gitHub,
+            color: Colors.black,
+          ),
+          LinkIcon(
+            icon: FontAwesomeIcons.linkedin,
+            proLink: linkedIn,
           ),
         ],
       ),
@@ -70,98 +52,54 @@ class _HomePageState extends State<HomePage> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Stack(
-                clipBehavior: Clip.none,
-                children: [
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                    width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height * 0.28,
-                    decoration: const BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.only(
-                        bottomRight: Radius.circular(40.0),
-                        bottomLeft: Radius.circular(40.0),
-                      ),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const [
-                            BioHead(text: nameH),
-                            BioBody(text: name),
-                            BioHead(text: userH),
-                            BioBody(text: user),
-                          ],
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const [
-                            BioHead(text: titleH),
-                            BioBody(text: title),
-                            BioHead(text: emailH),
-                            BioBody(text: email),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  Positioned(
-                    top: MediaQuery.of(context).size.height * 0.18,
-                    left: MediaQuery.of(context).size.width * 0.35,
-                    child: const CircleAvatar(
-                      radius: 70.0,
-                      foregroundImage: AssetImage(proImage),
-                    ),
-                  )
-                ],
-              ),
+              const ResumeBio(),
               SizedBox(
                 height: MediaQuery.of(context).size.width > 480 ? 140.0 : 100.0,
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                padding: const EdgeInsets.symmetric(horizontal: 22.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const BioHead(text: 'About'),
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width > 480
-                              ? 200
-                              : 170,
-                          child: const Card(
-                            elevation: 20.0,
-                            child: Text(about),
-                          ),
-                        )
-                      ],
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const BioHead(text: 'Roles'),
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width > 480
-                              ? 200
-                              : 170,
-                          child: const Card(
-                            elevation: 20.0,
-                            child: Text(about),
-                          ),
-                        )
-                      ],
-                    ),
+                  children: const [
+                    DetailCard(headerText: 'Role', bodyText: roles),
+                    DetailCard(headerText: 'About', bodyText: about),
                   ],
                 ),
               ),
             ],
           ),
         ],
+      ),
+    );
+  }
+}
+
+class LinkIcon extends StatelessWidget {
+  const LinkIcon({
+    Key? key,
+    required this.icon,
+    required this.proLink,
+    this.color,
+  }) : super(key: key);
+  final IconData icon;
+  final String proLink;
+  final Color? color;
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      onPressed: () async {
+        final Uri url = Uri.parse(proLink);
+        if (!await launchUrl(url)) {
+          await launchUrl(
+            url,
+            mode: LaunchMode.externalApplication,
+          );
+        }
+      },
+      icon: Icon(
+        icon,
+        color: color ?? Colors.blue,
       ),
     );
   }
