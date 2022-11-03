@@ -16,8 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     splash.startAnimation();
-    print(MediaQuery.of(context).size.width);
-    print(MediaQuery.of(context).size.height);
+
     return Scaffold(
       backgroundColor: Colors.yellow[100],
       body: Stack(
@@ -25,19 +24,19 @@ class _SplashScreenState extends State<SplashScreen> {
           Obx(
             () => AnimatedPositioned(
               duration: const Duration(milliseconds: 1600),
-              top: splash.animate!.value ? 40.0 : -40.0,
-              left: splash.animate!.value ? 20.0 : -20.0,
+              top: splash.animate!.value ? 40.0 : 0,
+              left: splash.animate!.value ? 20.0 : 0,
               child: CircleAvatar(
                 backgroundColor: Colors.pink,
-                radius: splash.animate!.value ? 40.0 : -10.0,
+                radius: splash.animate!.value ? 40.0 : 0,
               ),
             ),
           ),
           Obx(
             () => AnimatedPositioned(
               duration: const Duration(milliseconds: 1600),
-              top: splash.animate!.value ? 45.0 : -45.0,
-              left: splash.animate!.value ? 105.0 : -105.0,
+              top: splash.animate!.value ? 45.0 : 0,
+              left: splash.animate!.value ? 105.0 : 0,
               child: const CircleAvatar(
                 backgroundColor: Colors.blue,
                 radius: 35.0,
@@ -47,8 +46,8 @@ class _SplashScreenState extends State<SplashScreen> {
           Obx(
             () => AnimatedPositioned(
               duration: const Duration(milliseconds: 1600),
-              top: splash.animate!.value ? 50.0 : -50.0,
-              left: splash.animate!.value ? 180.0 : -180.0,
+              top: splash.animate!.value ? 50.0 : 0,
+              left: splash.animate!.value ? 180.0 : 0,
               child: const CircleAvatar(
                 backgroundColor: Colors.pink,
                 radius: 30.0,
@@ -98,7 +97,7 @@ class _SplashScreenState extends State<SplashScreen> {
           Obx(
             () => AnimatedPositioned(
               duration: const Duration(milliseconds: 1600),
-              bottom: splash.animate!.value ? 40.0 : -40.0,
+              bottom: splash.animate!.value ? 40.0 : 0,
               right: 30.0,
               child: const CircleAvatar(
                 backgroundColor: Colors.pink,
@@ -109,7 +108,7 @@ class _SplashScreenState extends State<SplashScreen> {
           Obx(
             () => AnimatedPositioned(
               duration: const Duration(milliseconds: 1600),
-              bottom: splash.animate!.value ? 45.0 : -45.0,
+              bottom: splash.animate!.value ? 45.0 : 0,
               right: 120.0,
               child: CircleAvatar(
                 backgroundColor:

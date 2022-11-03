@@ -66,7 +66,7 @@ class _HomePageState extends State<HomePage> {
               Padding(
                 padding: EdgeInsets.symmetric(
                     horizontal:
-                        MediaQuery.of(context).size.width < 411 ? 17.0 : 22.0),
+                        MediaQuery.of(context).size.width < 400 ? 17.0 : 22.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
