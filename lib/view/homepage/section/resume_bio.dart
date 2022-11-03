@@ -11,13 +11,15 @@ class ResumeBio extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double mWidth = MediaQuery.of(context).size.width;
+    double mHeight = MediaQuery.of(context).size.height;
     return Stack(
       clipBehavior: Clip.none,
       children: [
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 10.0),
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height * 0.28,
+          width: mWidth,
+          height: mHeight * 0.28,
           decoration: const BoxDecoration(
             color: Colors.blue,
             borderRadius: BorderRadius.only(
@@ -50,8 +52,8 @@ class ResumeBio extends StatelessWidget {
           ),
         ),
         Positioned(
-          top: MediaQuery.of(context).size.height * 0.18,
-          left: MediaQuery.of(context).size.width * 0.35,
+          top: mHeight * 0.18,
+          left: mWidth * 0.35,
           child: const CircleAvatar(
             radius: 70.0,
             foregroundImage: AssetImage(proImage),

@@ -10,6 +10,8 @@ class DetailCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double mWidth = MediaQuery.of(context).size.width;
+    double mHeight = MediaQuery.of(context).size.height;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -22,9 +24,9 @@ class DetailCard extends StatelessWidget {
           ),
           elevation: 20.0,
           child: Container(
-            width: MediaQuery.of(context).size.width > 480
+            width: mWidth > 480
                 ? 260
-                : MediaQuery.of(context).size.width < 411
+                : mWidth < 411
                     ? 80.0
                     : 170,
             padding: const EdgeInsets.symmetric(horizontal: 10.0),

@@ -24,6 +24,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    double mWidth = MediaQuery.of(context).size.width;
+    double mHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white.withOpacity(1),
@@ -57,16 +59,15 @@ class _HomePageState extends State<HomePage> {
             children: [
               const ResumeBio(),
               SizedBox(
-                height: MediaQuery.of(context).size.width > 480
+                height: mWidth > 480
                     ? 140.0
-                    : MediaQuery.of(context).size.width < 411
+                    : mWidth < 411
                         ? 60.0
                         : 100.0,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(
-                    horizontal:
-                        MediaQuery.of(context).size.width < 400 ? 17.0 : 22.0),
+                    horizontal: mWidth < 400 ? 17.0 : 22.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
