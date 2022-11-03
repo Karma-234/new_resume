@@ -9,6 +9,7 @@ import 'package:url_launcher/url_launcher_string.dart';
 
 import '../widgets/details_card_widget.dart';
 import '../widgets/resume_bio.dart';
+import '../widgets/social_link.dart';
 import '../widgets/text_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -32,16 +33,16 @@ class _HomePageState extends State<HomePage> {
               fontSize: 30.0),
         ),
         actions: const [
-          LinkIcon(
+          SocialLink(
             icon: FontAwesomeIcons.twitter,
             proLink: twitter,
           ),
-          LinkIcon(
+          SocialLink(
             icon: FontAwesomeIcons.github,
             proLink: gitHub,
             color: Colors.black,
           ),
-          LinkIcon(
+          SocialLink(
             icon: FontAwesomeIcons.linkedin,
             proLink: linkedIn,
           ),
@@ -58,11 +59,41 @@ class _HomePageState extends State<HomePage> {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 22.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    DetailCard(headerText: 'Role', bodyText: roles),
-                    DetailCard(headerText: 'About', bodyText: about),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        DetailCard(headerText: 'Role', bodyText: roles),
+                        DetailCard(headerText: 'About', bodyText: about),
+                      ],
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        BioHead(text: 'Skills'),
+                        SkillTile(
+                          icon: FontAwesomeIcons.python,
+                          skill: python,
+                        ),
+                        SkillTile(
+                          icon: FontAwesomeIcons.mobile,
+                          skill: flutter,
+                        ),
+                        SkillTile(
+                            icon: FontAwesomeIcons.solidFileExcel,
+                            skill: sqlite),
+                        SkillTile(
+                          icon: FontAwesomeIcons.java,
+                          skill: java,
+                        ),
+                        SkillTile(
+                          icon: FontAwesomeIcons.route,
+                          skill: api,
+                        )
+                      ],
+                    ),
                   ],
                 ),
               ),
@@ -74,32 +105,27 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-class LinkIcon extends StatelessWidget {
-  const LinkIcon({
+class SkillTile extends StatelessWidget {
+  const SkillTile({
     Key? key,
     required this.icon,
-    required this.proLink,
-    this.color,
+    this.iconColor,
+    required this.skill,
   }) : super(key: key);
+  final String skill;
   final IconData icon;
-  final String proLink;
-  final Color? color;
+  final Color? iconColor;
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-      onPressed: () async {
-        final Uri url = Uri.parse(proLink);
-        if (!await launchUrl(url)) {
-          await launchUrl(
-            url,
-            mode: LaunchMode.externalApplication,
-          );
-        }
-      },
-      icon: Icon(
+    return ListTile(
+      leading: Icon(
         icon,
-        color: color ?? Colors.blue,
+        color: iconColor ?? Colors.grey[450],
+      ),
+      title: Text(
+        skill,
+        style: GoogleFonts.inika(fontSize: 18.0),
       ),
     );
   }

@@ -18,3 +18,10 @@ const emailH = 'Email:';
 const twitter = 'https://twitter.com/xchangekamzy';
 const gitHub = 'https://github.com/Karma-234';
 const linkedIn = 'https://www.linkedin.com/in/kamal-busari-3ab382249';
+
+const String python = 'Python and data structures';
+const String java = 'Java and object-oriented-programming';
+const String flutter = 'Cross Platform Programming with Dart and Flutter';
+
+const String api = 'Simple Api build and consumption';
+const String sqlite = 'Database build and management (SQLite)';
