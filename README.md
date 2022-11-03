@@ -4,13 +4,25 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+# App description
+-It includes and animated splashscreen done with getX on the first page which navigates to the home page after completion.
 
-A few resources to get you started if this is your first Flutter project:
+# Code base and function
+-The code was written in flutter (Dart framework) which is a cross platfrom language.
+-It allows one to write ecode for different platforms (mobile,web,desktop) in the shortest and most effiecient time possible.
+-The production is achieved by using widgets and following a  widget tree.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+# Libraries used
+-GetX: For easy navigation and value delivery.
+-Url_Launcher: For navigation to social media links.
+-Google_fonts: For test styles and format.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Pending features 
+-More and smoother animations.
+-Navigation to git repository showcasing each skill.
+-Dark mode implementaion.
+-Language implementation.
+
+# challenges
+-Design was off-heart, getting a design was surprisingly challenging.
+-Code cleanup.
