@@ -60,7 +60,7 @@ class _HomePageState extends State<HomePage> {
                 height: MediaQuery.of(context).size.width > 480
                     ? 140.0
                     : MediaQuery.of(context).size.width < 411
-                        ? 80.0
+                        ? 60.0
                         : 100.0,
               ),
               Padding(

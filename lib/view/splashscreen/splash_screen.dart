@@ -61,7 +61,7 @@ class _SplashScreenState extends State<SplashScreen> {
               left: MediaQuery.of(context).size.width > 480
                   ? 110.0
                   : MediaQuery.of(context).size.width < 411
-                      ? 30.0
+                      ? 10.0
                       : 60.0,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
