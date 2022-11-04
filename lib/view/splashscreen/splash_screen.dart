@@ -59,9 +59,9 @@ class _SplashScreenState extends State<SplashScreen> {
             () => AnimatedPositioned(
               duration: const Duration(milliseconds: 1600),
               top: mWidth > 480 || mHeight > 680 ? 140.0 : 220.0,
-              left: mWidth > 480 || mHeight > 680
+              left: mWidth > 480
                   ? 110.0
-                  : mWidth < 411
+                  : mWidth < 410
                       ? 10.0
                       : 60.0,
               child: Column(

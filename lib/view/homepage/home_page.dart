@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     double mWidth = MediaQuery.of(context).size.width;
     double mHeight = MediaQuery.of(context).size.height;
-    print('$mHeight $mWidth');
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white.withOpacity(1),
