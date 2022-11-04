@@ -18,6 +18,7 @@ A new Flutter project.
 -GetX: For easy navigation, shorter code and splashscreen animation.
 -Url_Launcher: For navigation to social media links.
 -Google_fonts: For test styles and format.
+-Font Awesome Icons: For social media icons.
 
 ## Pending features 
 -More and smoother animations.
