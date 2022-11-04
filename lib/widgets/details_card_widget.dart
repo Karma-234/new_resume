@@ -26,8 +26,8 @@ class DetailCard extends StatelessWidget {
           child: Container(
             width: mWidth > 480
                 ? 260
-                : mWidth < 411
-                    ? 80.0
+                : mWidth < 380
+                    ? 140.0
                     : 170,
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
             decoration: const BoxDecoration(
@@ -43,7 +43,7 @@ class DetailCard extends StatelessWidget {
             ),
             child: Text(
               bodyText,
-              style: GoogleFonts.acme(fontSize: 20.0),
+              style: GoogleFonts.acme(fontSize: mWidth < 380 ? 14.0 : 20.0),
             ),
           ),
         )
