@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:my_resume/model/widgets/text_widget.dart';
 
@@ -13,6 +15,7 @@ class ResumeBio extends StatelessWidget {
   Widget build(BuildContext context) {
     double mWidth = MediaQuery.of(context).size.width;
     double mHeight = MediaQuery.of(context).size.height;
+
     return Stack(
       clipBehavior: Clip.none,
       children: [
