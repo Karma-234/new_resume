@@ -27,28 +27,31 @@ class ResumeBio extends StatelessWidget {
               bottomLeft: Radius.circular(40.0),
             ),
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  BioHead(text: nameH),
-                  BioBody(text: name),
-                  BioHead(text: userH),
-                  BioBody(text: user),
-                ],
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  BioHead(text: titleH),
-                  BioBody(text: title),
-                  BioHead(text: emailH),
-                  BioBody(text: email),
-                ],
-              ),
-            ],
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    BioHead(text: nameH),
+                    BioBody(text: name),
+                    BioHead(text: userH),
+                    BioBody(text: user),
+                  ],
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    BioHead(text: titleH),
+                    BioBody(text: title),
+                    BioHead(text: emailH),
+                    BioBody(text: email),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
         Positioned(
