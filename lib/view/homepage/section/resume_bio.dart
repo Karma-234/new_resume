@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_resume/widgets/text_widget.dart';
+import 'package:my_resume/model/widgets/text_widget.dart';
 
 import '../../../constants/image_strings.dart';
 import '../../../constants/text_strings.dart';
@@ -19,7 +19,7 @@ class ResumeBio extends StatelessWidget {
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 10.0),
           width: mWidth,
-          height: mHeight * 0.28,
+          height: mHeight * 0.30,
           decoration: const BoxDecoration(
             color: Colors.blue,
             borderRadius: BorderRadius.only(

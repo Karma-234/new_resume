@@ -7,11 +7,11 @@ import 'package:my_resume/constants/text_strings.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-import '../../widgets/details_card_widget.dart';
+import '../../model/widgets/details_card_widget.dart';
 import 'section/resume_bio.dart';
-import '../../widgets/skill_tile.dart';
-import '../../widgets/social_link.dart';
-import '../../widgets/text_widget.dart';
+import '../../model/widgets/skill_tile.dart';
+import '../../model/widgets/social_link.dart';
+import '../../model/widgets/text_widget.dart';
 import 'section/skills.dart';
 
 class HomePage extends StatefulWidget {

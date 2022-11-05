@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_resume/widgets/text_widget.dart';
+import 'package:my_resume/model/widgets/text_widget.dart';
 
 class DetailCard extends StatelessWidget {
   const DetailCard({Key? key, required this.headerText, required this.bodyText})

@@ -10,8 +10,7 @@ A new Flutter project.
 ## Code base and function
 -The code was written in flutter (Dart framework) which is a cross platfrom language.
 -It allows one to write ecode for different platforms (mobile,web,desktop) in the shortest and most effiecient time possible.
--The production is achieved by using widgets and following a  widget tree.
--The MVC design pattern was used.
+-The MVC design pattern was used. Controllers, views and models were put in a different folders.
 -App was designed for android 11.0 and higher.
 
 ## Libraries used
@@ -33,3 +32,6 @@ A new Flutter project.
 
 ## Appetize Link
 -https://appetize.io/app/msovzjnjcz6pxjmexe2unxcysm?device=pixel4&osVersion=11.0&scale=75
+
+## Dropbox link
+-https://www.dropbox.com/t/gqHVHDd0Tao2Zn1W

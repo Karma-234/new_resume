@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../constants/text_strings.dart';
-import '../../../widgets/skill_tile.dart';
-import '../../../widgets/text_widget.dart';
+import '../../../model/widgets/skill_tile.dart';
+import '../../../model/widgets/text_widget.dart';
 
 class Skills extends StatelessWidget {
   const Skills({
