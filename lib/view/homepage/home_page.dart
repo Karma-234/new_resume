@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_resume/constants/image_strings.dart';
-import 'package:my_resume/constants/text_strings.dart';
+import 'package:my_resume/core/constants/image_strings.dart';
+import 'package:my_resume/core/constants/text_strings.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-import '../../model/widgets/details_card_widget.dart';
+import '../../core/widgets/details_card_widget.dart';
 import 'section/resume_bio.dart';
-import '../../model/widgets/skill_tile.dart';
-import '../../model/widgets/social_link.dart';
-import '../../model/widgets/text_widget.dart';
+import '../../core/widgets/skill_tile.dart';
+import '../../core/widgets/social_link.dart';
+import '../../core/widgets/text_widget.dart';
 import 'section/skills.dart';
 
 class HomePage extends StatefulWidget {
